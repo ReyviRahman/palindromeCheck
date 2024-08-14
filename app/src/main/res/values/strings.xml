@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">palindromeCheck</string>
+    <string name="name">Name</string>
+    <string name="palindrome">Palindrome</string>
+    <string name="check">CHECK</string>
+    <string name="next">NEXT</string>
+</resources>
