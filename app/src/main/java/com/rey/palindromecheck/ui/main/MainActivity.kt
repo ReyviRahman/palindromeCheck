@@ -1,16 +1,12 @@
-package com.rey.palindromecheck
+package com.rey.palindromecheck.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.rey.palindromecheck.R
 import com.rey.palindromecheck.databinding.ActivityMainBinding
-import com.rey.palindromecheck.databinding.ActivitySecondScreenBinding
+import com.rey.palindromecheck.ui.second.SecondScreenActivity
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null

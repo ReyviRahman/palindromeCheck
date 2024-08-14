@@ -1,13 +1,10 @@
-package com.rey.palindromecheck
+package com.rey.palindromecheck.ui.second
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.rey.palindromecheck.databinding.ActivitySecondScreenBinding
+import com.rey.palindromecheck.ui.third.ThirdScreenActivity
 
 class SecondScreenActivity : AppCompatActivity() {
     private var _binding: ActivitySecondScreenBinding? = null
@@ -21,6 +18,7 @@ class SecondScreenActivity : AppCompatActivity() {
         val name = intent.getStringExtra(EXTRA_NAME)
         binding.tvName.text = name
         binding.btnChooseAUser.setOnClickListener {
+            startActivity(Intent(this, ThirdScreenActivity::class.java))
         }
     }
 
