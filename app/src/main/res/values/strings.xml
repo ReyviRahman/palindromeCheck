@@ -4,4 +4,11 @@
     <string name="palindrome">Palindrome</string>
     <string name="check">CHECK</string>
     <string name="next">NEXT</string>
+    <string name="isPalindrome">isPalindrome</string>
+    <string name="ok">Okay</string>
+    <string name="notPalindrome">not palindrome</string>
+    <string name="welcome">Welcome</string>
+    <string name="selected_user_name">Selected User Name</string>
+    <string name="choose_a_user">Choose a User</string>
+
 </resources>

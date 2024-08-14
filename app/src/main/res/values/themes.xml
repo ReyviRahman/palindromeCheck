@@ -12,4 +12,9 @@
         <item name="cornerSize">12dp</item>
     </style>
 
+    <style name="CustomTextInputLayoutss" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
 </resources>
