@@ -3,10 +3,13 @@ package com.rey.palindromecheck.ui.third
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.rey.palindromecheck.data.UserPagingSource
 import com.rey.palindromecheck.databinding.ActivityThirdScreenBinding
 import com.rey.palindromecheck.ui.LoadingStateAdapter
 import com.rey.palindromecheck.ui.ViewModelFactory
@@ -16,7 +19,7 @@ class ThirdScreenActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     private val thirdViewModel: ThirdViewModel by viewModels {
-        ViewModelFactory(this)
+        ViewModelFactory.getInstance(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,13 @@ class ThirdScreenActivity : AppCompatActivity() {
         thirdViewModel.quote.observe(this) {
             adapter.submitData(lifecycle, it)
         }
+
+        UserPagingSource.isLoading.observe(this) {
+            if(it == false) {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+
     }
 
     override fun onDestroy() {

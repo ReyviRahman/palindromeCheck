@@ -7,6 +7,6 @@ import com.rey.palindromecheck.data.remote.retrofit.ApiConfig
 object Injection {
     fun provideRepository(context: Context): ActivityRepository {
         val apiService = ApiConfig.getApiService()
-        return ActivityRepository(apiService)
+        return ActivityRepository.getInstance(apiService)
     }
 }

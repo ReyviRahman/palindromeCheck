@@ -12,11 +12,24 @@ class ActivityRepository(private val apiService: ApiService) {
     fun getUsers(): LiveData<PagingData<DataItem>> {
         return Pager(
             config = PagingConfig(
-                pageSize = 5
+                pageSize = 5,
+                enablePlaceholders = false,
+                initialLoadSize = 5
             ),
             pagingSourceFactory = {
                 UserPagingSource(apiService)
             }
         ).liveData
+    }
+
+    companion object {
+        @Volatile
+        private var instance: ActivityRepository? = null
+        fun getInstance(
+            apiService: ApiService,
+        ): ActivityRepository =
+            instance ?: synchronized(this) {
+                instance ?: ActivityRepository(apiService)
+            }.also { instance = it }
     }
 }

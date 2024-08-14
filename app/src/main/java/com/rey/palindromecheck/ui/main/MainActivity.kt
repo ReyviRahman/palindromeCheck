@@ -2,6 +2,7 @@ package com.rey.palindromecheck.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.rey.palindromecheck.R
@@ -18,9 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, SecondScreenActivity::class.java)
-            intent.putExtra(SecondScreenActivity.EXTRA_NAME, binding.etName.text.toString())
-            startActivity(intent)
+            if (binding.etName.text.toString().isEmpty()) {
+                Toast.makeText(this, "Insert Your Name Please", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, SecondScreenActivity::class.java)
+                intent.putExtra(SecondScreenActivity.EXTRA_NAME, binding.etName.text.toString())
+                startActivity(intent)
+
+            }
         }
         binding.btnCheck.setOnClickListener {
             val word = binding.etPalindrome.text.toString()
